@@ -1,0 +1,38 @@
+/*初始化css*/
+* {
+	margin: 0px;
+	padding: 0px;
+}
+.main {
+	width: 1600px;
+	margin: 0 auto;
+}
+.nav {
+	height: 65px;
+	/*导航背景色为#222222*/
+	background-color: #222222;
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+}
+.nav a {
+	display: inline-block;
+	text-decoration: none;
+	/*a标签字体颜色为#9d9d9d*/
+	color: #9d9d9d;
+	margin-right: 40px;
+}
+.nav_a, .nav_b {
+	float: left;
+}
+.nav_a {
+	margin: 20px 0 0 20px;
+}
+.nav_c {
+	float: right;
+	margin: 20px 20px 0 0;
+}
+.nav a:hover {
+	/*鼠标以上字体颜色为白色*/
+	color: white;
+}
+

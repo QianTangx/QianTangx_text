@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--引入css样式-->
+		<link rel="stylesheet" type="text/css" href="css/top.css"/>
+		<link rel="stylesheet" type="text/css" href="css/dlcenter.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bot.css"/>
+	</head>
+	<body>
+		<!--主体-->
+		<div class="main">
+			<!--导航部分-->
+			<div class="nav">
+				<div class="nav_a">
+					<a href="index.html">XX数码商城</a>
+					<a href="index.html">首页</a>
+					<a href="javascript:;">商品列表</a>
+					<a href="javascript:;">品牌排行</a>
+					<a href="javascript:;">关于我们</a>
+				</div>
+				
+				<div class="nav_b">
+					<img src="img/search.jpg"/>
+				</div>
+				
+				<div class="nav_c">
+					<a href="denglu.html">登录注册</a>
+				</div>
+				
+			</div>
+			<!--中间部分-->
+			<div class="glcen">
+				<div class="dl">
+					<!--登录部分-->
+					<form action="javascript:;" method="post">
+						<h1>登录</h1>
+						<div class="dl_a">
+							<span>用户：</span>
+							<input type="text" value="" class="name" />
+						</div>
+						<div class="dl_a">
+							<span>密码：</span>
+							<input type="text" value="" class="pass"/>
+						</div>
+						<div class="dl_b">
+							<input type="submit" value="登录" class="action" />
+							<input type="reset" value="重置" />
+						</div>
+					</form>
+				</div>
+			</div>
+			<!--底部-->
+			<div class="bottom">
+				<div class="bot_a">
+					联系电话13710011001
+				</div>
+				<div class="bot_a">
+					地址：xx省xx市xx路xx号
+				</div>
+				<div class="bot_a">
+					版权所有：@xxxxxxxxxx
+				</div>
+			</div>
+			
+		</div>
+		
+	</body>
+</html>
+<!--javascript样式-->
+<script type="text/javascript">
+	//获取并点击登录创建一个函数
+	document.querySelector('.action').onclick = function() {
+		//获取用户名和密码，如果为空 提示  账号密码不能为空！
+		var name = document.querySelector('.name').value;
+		var pass = document.querySelector('.pass').value;
+		if (name == '' || pass == '') {
+			alert('账号密码不能为空！')
+			return
+		} else {
+			alert('用户名：'+name+'  密码：'+pass)
+		}
+	}
+	
+</script>

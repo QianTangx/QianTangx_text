@@ -1,0 +1,66 @@
+.lbt img {
+	/*轮播图大小为1600px*/
+	width: 1600px;
+}
+/*商品列表部分宽度为1200px 并居中显示*/
+.incen {
+	width: 1200px;
+	height: 730px;
+	margin: 0 auto;
+	/*background-color: white;*/
+}
+h2 {
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #9D9D9D;
+}
+/*每一个li*/
+.incen_a li {
+	text-align: center;
+	list-style: none;
+	width: 250px;
+	height: 320px;
+	border:  1px solid #9D9D9D;
+	float: left;
+	margin-right: 40px;
+	margin-top: 10px;
+}
+.incen_a li:nth-of-type(1), .incen_a li:nth-of-type(5) {
+	margin-left: 30px;
+}
+.ina_b {
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+/*图片大小设为200px*/
+.incen_a li img {
+	width: 200px;
+}
+/*向右浮动*/
+.ina_c {
+	margin-bottom: 10px;
+	text-align: left;
+}
+.ina_d a {
+	margin-top: 10px;
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	padding: 5px 10px;
+	font-weight: bold;
+	border-radius: 5px;
+}
+/*设置购买和详情的背景色*/
+.ina_d a:nth-of-type(1) {
+	background-color: #d9534f;
+}
+.ina_d a:nth-of-type(2) {
+	background-color: #337ab7;
+}
+.ina_d a:nth-of-type(1):hover {
+	background-color: #d43f3a;
+}
+.ina_d a:nth-of-type(2):hover {
+	background-color: #2e6da4;
+}

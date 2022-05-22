@@ -1,0 +1,18 @@
+/*底部整体样式*/
+.bottom {
+	font-size: 15px;
+	width: 1600px;
+	height: 200px;
+	margin: 10px auto;
+	text-align: center;
+	background-color: black;
+	color: white;
+	border: 1px solid black;
+}
+.bot_a:nth-of-type(1) {
+	margin-top: 60px;
+}
+/*字体行高25px*/
+.bot_a {
+	line-height: 25px;
+}
