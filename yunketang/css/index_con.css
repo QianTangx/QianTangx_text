@@ -1,0 +1,38 @@
+.contenr img {
+	/* 设置图片大小为1200px */
+	width: 1200px;
+}
+.centent {
+	/* 设置内容区域大小  */
+	width: 800px;
+	height: 500px;
+	margin: 0 auto;
+}
+.cen {
+	width: 180px;
+	height: 230px;
+	float: left;
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+.cen img {
+	width: 180px;
+}
+.cent_a {
+	width: 180px;
+	height: 110px;
+}
+.cent_a:hover {
+	transform: rotate(15deg) scale(0.9);
+}
+.cent_c {
+	margin: 10px 0;
+	font-size: 12px;
+}
+.cent_d {
+	width: 40px;
+	padding: 5px 10px;
+	background-color: green;
+	color: white;
+}

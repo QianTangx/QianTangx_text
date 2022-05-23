@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!--引入css-->
+		<link rel="stylesheet" type="text/css" href="css/top.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bot.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index_con.css"/>
+	</head>
+	<body>
+		
+		<div class="main">
+			<div class="top">
+				<div class="top_a">
+					<a href="index.html"><img src="img/logo.jpg"/></a>
+				</div>
+				
+				<div class="top_b">
+					<input type="" placeholder="  请输入关键字搜索" />
+					<div class="top_c">搜索</div>
+				</div>
+			</div>
+			
+			<div class="nav">
+				<div class="nav_a">全部课程</div>
+				<div class="nav_b">
+					<a href="javascript: ;">首页</a>
+					<a href="javascript: ;">前端技术</a>
+					<a href="javascript: ;">最新技术</a>
+					<a href="javascript: ;">教程API</a>
+					<a href="javascript: ;">留言板</a>
+					<a href="javascript: ;">关于</a>
+					<a href="javascript: ;">登录</a>
+					<a href="zhuce.html">注册</a>
+				</div>
+			</div>
+			
+			<div class="contenr">
+				<img src="img/banner1.jpg"/>
+			</div>
+			
+			<div class="centent">
+				<h2>前端技术</h2>
+				<div class="cen">
+					<div class="cent_a">
+						<img src="img/jqueryapi.png"/>
+					</div>
+					<div class="cent_b">JQuer API</div>
+					<div class="cent_c">根据最新的 jQuery 1.11.x 和 2.1.x 版本翻译的 jQuery API 中文文档/手册</div>
+					<div class="cent_d">详情</div>
+				</div>
+				<div class="cen">
+					<div class="cent_a">
+						<img src="img/lesscss.png"/>
+					</div>
+					<div class="cent_b">LESS</div>
+					<div class="cent_c">LESS 为 CSS 赋予了动态语言的特性，如变量、继承、运算、函数。</div>
+					<div class="cent_d">详情</div>
+				</div>
+				<div class="cen">
+					<div class="cent_a">
+						<img src="img/nodejs.png"/>
+					</div>
+					<div class="cent_b">Node.js</div>
+					<div class="cent_c">Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。</div>
+					<div class="cent_d">详情</div>
+				</div>
+				<div class="cen">
+					<div class="cent_a">
+						<img src="img/react.png"/>
+					</div>
+					<div class="cent_b">React</div>
+					<div class="cent_c">React 起源于 Facebook 的内部项目，是一个用于构建用户界面的 JavaScript 库。</div>
+					<div class="cent_d">详情</div>
+				</div>
+				<div class="cen">
+					<div class="cent_a">
+						<img src="img/sass.png"/>
+					</div>
+					<div class="cent_b">SASS</div>
+					<div class="cent_c">根据最新的 jQuery 1.11.x 和 2.1.x 版本翻译的 jQuery API 中文文档/手册。</div>
+					<div class="cent_d">详情</div>
+				</div>
+				<div class="cen">
+					<div class="cent_a">
+						<img src="img/vuejs.png"/>
+					</div>
+					<div class="cent_b">Vue.js</div>
+					<div class="cent_c">Vue.js - 是一套构建用户界面的渐进式框架。</div>
+					<div class="cent_d">详情</div>
+				</div>
+				<div class="cen">
+					<div class="cent_a">
+						<img src="img/w3schools.png"/>
+					</div>
+					<div class="cent_b">w3schools</div>
+					<div class="cent_c">w3schools.com 是最受欢迎的前端技术教程网站。</div>
+					<div class="cent_d">详情</div>
+				</div>
+				<div class="cen">
+					<div class="cent_a">
+						<img src="img/zeptojs.png"/>
+					</div>
+					<div class="cent_b">Zepto.js</div>
+					<div class="cent_c">Zepto.js 是一个轻量级、兼容 jQuery 的 JavaScript 工具库。</div>
+					<div class="cent_d">详情</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="bottom">
+				<div class="bot_a">Copying  2012-2021 爱学习网络科技有限公司 版权所有</div>
+				<div class="bot_b">豫ICP备20210001号</div>
+		</div>
+		
+		
+	</body>
+</html>
+<script type="text/javascript">
+	// 把所以图片放入 tps 数组中
+	let tps = ["img/banner1.jpg", "img/banner2.jpg"]
+	// 设置全局变量 count
+	let count = 0
+    console.log("🚀 ~ file: index.html ~ line 125 ~ count", count)
+	// 创建 fun() 函数以便随时调用
+	function fun() {
+		count++
+		if (count == 2) {
+			count = 0
+		}
+		document.querySelector('.contenr img').src = tps[count]
+	}
+	// 每过 2 秒调用一次 fun() 函数
+	setInterval(fun, 1000)
+	
+</script>

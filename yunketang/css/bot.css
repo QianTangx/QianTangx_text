@@ -1,0 +1,8 @@
+/* 底部文字样式  */
+.bottom {
+	text-align: center;
+	width: 350px;
+	font-size: 14px;
+	margin: 50px auto;
+	line-height: 30px;
+}

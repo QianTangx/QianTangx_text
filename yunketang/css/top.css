@@ -1,0 +1,69 @@
+* {
+	/* 初始化css 以便兼容不同浏览器*/
+	padding: 0;
+	margin: 0;
+}
+body {
+	/* body背景颜色设为灰色 */
+	background-color: aliceblue;
+}
+.main {
+	/* 设置主题大小  */
+	width: 1200px;
+	height: 1080px;
+	margin: 0 auto;
+	background-color: white;
+	border-bottom: 2px solid darkgray;
+}
+.top_a, .top_b, .nav_a, .nav_b {
+	display: inline-block;
+}
+.top_a {
+	margin-left: 150px;
+}
+.top_b {
+	float: right;
+	margin: 10px 200px 0 0;
+}
+.top_b input {
+	width: 300px;
+	height: 30px;
+	border: 2px solid green;
+}
+.top_c {
+	color: white;
+	display: inline-block;
+	padding: 8px 20px;
+	background-color: green;
+	float: right;
+}
+.nav {
+	color: white;
+	height: 30px;
+	background-color: green;
+}
+.nav_a {
+	width: 100px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	background-color: darkgreen;
+	margin-left: 180px;
+}
+a {
+	/* 去除 a 标签的下划线 */
+	text-decoration: none;
+}
+.nav_b a {
+	color: white;
+	margin-left: 20px;
+	line-height: 30px;
+}
+.nav_b {
+	float: right;
+	margin-right: 100px;
+}
+/* 鼠标移上字体颜色变为红色 */
+.nav_b a:hover {
+	color: red;
+}
