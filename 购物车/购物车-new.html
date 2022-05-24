@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0 auto;
+			}
+			.centre img{
+				width: 80px;
+			}
+			#main{
+				width: 1400px;
+			}
+			.one{
+				width: 70px;
+				font-weight: bold;
+				color: red;
+				border-bottom: 1px red solid;
+				position: absolute;
+				left: 250px;
+				top: 95px;
+			}
+			.fd{
+				float: left;
+			}
+			.top{
+				background-color: #f3f3f3;
+				height: 50px;
+				line-height: 50px;
+			}
+			.t2,.t4,.t6{
+				margin-left: 100px;
+			}
+			.t3{
+				margin-left: 550px;
+			}
+			.t5{
+				margin-left: 200px;
+			}
+			.centre{
+				margin-top: 10px;
+			}
+			.c2{
+				width: 90px;
+				margin-left: 50px;
+				border: 1px solid black;
+				align-content: center;
+			}
+			.c3{
+				font-size: 18px;
+				width: 400px;
+				margin-left: 10px;
+			}
+			.c4{
+				margin-left: 160px;
+			}
+			.c5{
+				margin-left: 50px;
+			}
+			.c6>input{
+				width: 50px;
+				text-align: center;
+			}
+			.c8{
+				margin-left: 150px;
+			}
+			.c9{
+				margin-left: 90px;
+			}
+			.k1{
+				height: 150px;
+				border: 1px solid #f1f1f1;
+				border-top: 2px solid #aaaaaa;
+				padding-top: 10px;
+				margin-top: 15px;
+			}
+			.bottom{
+				border: 1px solid #aaaaaa;
+				height: 60px;
+				font-size: 13px;
+				line-height: 60px;
+				margin-top: 15px;
+			}
+			.b2,.b3{
+				margin-left: 50px;
+			}
+			.b2:hover,.b3:hover{
+				color: red;
+			}
+			.b4{
+				margin-left: 650px;
+				width: 110px;
+			}
+			.b4>span{
+				color: red;
+				font-size: 18px;
+				font-weight: bold;
+				margin: 0 3px 0 3px;
+			}
+			.b5{
+				margin-left: 50px;
+			}
+			.b5>span{
+				color: red;
+				font-size: 20px;
+				font-weight: bold;
+				margin: 0 3px 0 3px;
+			}
+			.b6{
+				background-color: red;
+				color: #fff;
+				padding: 10px;
+				font-size: 23px;
+				width: 100px;
+				margin-left: 18px;
+				text-align: center;
+				height: 40px;
+				line-height: 40px;
+				float: right;
+			}
+			.c9:hover{
+				color: red;
+			}
+			.ys{
+				background-color: antiquewhite;
+			}
+			.clear{
+				clear: both;
+			}
+		</style>
+		<script src="js/jquery-3.6.0.js"></script>
+		<script>
+			$(function(){
+				$('[name="qx"]').click(function(){
+					//var qx = $('[name="qx"]').prop('checked')
+					//判定全选框是否被选中
+					//全选要给每一个k1添加addClass('ys')样式
+					var qx = $('[name="qx"]').prop('checked')
+					if (qx){
+						$('[name="xz"]').prop('checked',true)
+						$('[name="qx"]').prop('checked',true)
+						$('.k1').addClass('ys')
+					}else{
+						$('[name="xz"]').prop('checked',false)
+						$('[name="qx"]').prop('checked',false)
+						$('.k1').removeClass('ys')
+					}
+				})
+				$('[name="xz"]').change(function(){
+					//通过change复选框改变的长度来判断是否全选中
+					//console.log($('[name="xz"]').length)复选框的多少
+					var xz = $('[name="xz"]:checked').length
+					if (xz == $('[name="xz"]').length){
+						$('[name="qx"]').prop('checked',true)
+					}else{
+						$('[name="qx"]').prop('checked',false)
+					}
+					//判断复选框是否被选中，如果选中加addClass('ys')样式
+					//否则则移除添加的样式
+					console.log($(this).prop('checked'))
+					if ($(this).prop('checked')){
+						//console.log($(this).parent().parent())
+						//找到复选框的父元素k1
+						$(this).parent().parent().addClass('ys')
+					}else{
+						$(this).parent().parent().removeClass('ys')
+					}
+				})
+				$('button').click(function(){
+					//点击-号获取当前父级div下面的div子级text的val值，并减1
+					//如果数值等于一，则不用减，val值不用改变
+					//如果不为一，则减去1，再找到text改变减去的val值
+					//+号同理,找到父级上面的div
+					if($(this).val() == '-'){
+						var sz = $(this).parent().next().children().val()
+						if (sz == 1){
+							$(this).parent().next().children().val(sz)
+						}else{
+							sz--
+							$(this).parent().next().children().val(sz)
+						}
+						//找到单价，找到总价，计算结果html更改到text中
+						//console.log($(this).parent().siblings('.c8')) 总价
+						// $(this).parent().siblings('.c4').text()  单价除去￥符号
+						//加号同理
+						var dj = $(this).parent().siblings('.c4').text()
+						dj = dj.substr(1)
+						$(this).parent().siblings('.c8').html('￥'+(sz * dj).toFixed(2))
+						sum()
+					}else{
+						var sz = $(this).parent().prev().children().val()
+						sz++
+						$(this).parent().prev().children().val(sz)
+						var dj = $(this).parent().siblings('.c4').text()
+						dj = dj.substr(1)
+						$(this).parent().siblings('.c8').html('￥'+(sz * dj).toFixed(2))
+						sum()
+					}
+				})
+				// 用户直接更改text文本框时，获取用户输入的值，然后与加号减号的更改总价原理相同
+				$('.c6>input').change(function(){
+					//console.log($(this).val())  用户更改的值
+					var gg = $(this).val()
+					var dj = $(this).parent().siblings('.c4').text()
+					dj = dj.substr(1)
+					$(this).parent().siblings('.c8').html('￥'+(gg * dj).toFixed(2))
+					sum()
+				})
+				//定义一个sum函数来计算总和与总计
+				//each循环来查找每一个.text(ele),和.text(i)索引
+				//count加上查找到的text总值，html更改下边span的值
+				function sum(){
+					var count = 0
+					var money = 0
+					$('.text').each(function(i,ele){
+						//console.log($(ele).val()) text的值
+						count += parseInt($(ele).val())
+					})
+					$('.b4>span').html(count)
+					//each循环遍历总价，money加上找到的总价，html更改下边span的值
+					$('.c8').each(function(i,ele){
+						money += parseFloat($(ele).text().substr(1))
+					})
+					$('.b5>span').html('￥'+money.toFixed(2))
+				}
+				// 删除所在的一排,并在删除后调用sum函数计算删除后的总计和总和
+				$('.c9').click(function(){
+					console.log($(this).parent())
+					$(this).parent().remove()
+				})
+				//删除选中的一排
+				//$('[name="xz"]:checked')返回选中的元素
+				//找到元素所在的一排，remove删除掉
+				//删除后再次调用sum函数计算删除后的总计和总和
+				$('.b2').click(function(){
+					//console.log($('[name="xz"]:checked').parent().parent()) 
+					$('[name="xz"]:checked').parent().parent().remove()
+					sum()
+				})
+				//清空购物车
+				//删除所有k1
+				//删除后再次调用sum函数计算删除后的总计和总和
+				$('.b3').click(function(){
+					console.log($('.k1'))
+					$('.k1').remove()
+					sum()
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="main">
+			<div id="top">
+				<img src="img/4.png" alt="">
+			</div>
+			<div class="one">全部商品</div>
+			<div class="two">
+				<div class="top">
+					<div class="t1 fd"><input type="checkbox" name="qx">全选</div>
+					<div class="t2 fd">商品</div>
+					<div class="t3 fd">单价</div>
+					<div class="t4 fd">数量</div>
+					<div class="t5 fd">小计</div>
+					<div class="t6 fd">操作</div>
+				</div>
+				<div class="clear"></div>
+				<div class="centre">
+					<div class="k1">
+						<div class="c1 fd"><input type="checkbox" name="xz"></div>
+						<div class="c2 fd"><img src="img/1.png" alt=""></div>
+						<div class="c3 fd">【5本26.8元】经典儿童文学彩图青少版八十天环游地球中学生语文教学大纲</div>
+						<div class="c4 fd">￥12.60</div>
+						<div class="c5 fd"><button value="-">-</button></div>
+						<div class="c6 fd"><input type="text" class="text" value="1"></div>
+						<div class="c7 fd"><button value="+">+</button></div>
+						<div class="c8 fd">￥12.60</div>
+						<div class="c9 fd">删除</div>
+					</div>
+					<div class="clear"></div>
+					<div class="k1">
+						<div class="c1 fd"><input type="checkbox" name="xz"></div>
+						<div class="c2 fd"><img src="img/2.png" alt=""></div>
+						<div class="c3 fd">【2000张贴纸】贴纸书 3-6岁 贴画儿童 贴画书全套12册 贴画 贴纸儿童</div>
+						<div class="c4 fd">￥24.80</div>
+						<div class="c5 fd"><button value="-">-</button></div>
+						<div class="c6 fd"><input type="text" class="text" value="1"></div>
+						<div class="c7 fd"><button value="+">+</button></div>
+						<div class="c8 fd">￥24.80</div>
+						<div class="c9 fd">删除</div>
+					</div>
+					<div class="clear"></div>
+					<div class="k1">
+						<div class="c1 fd"><input type="checkbox" name="xz"></div>
+						<div class="c2 fd"><img src="img/3.png" alt=""></div>
+						<div class="c3 fd">唐诗三百首+成语故事全2册 一年级课外书 精装注音儿童版 小学生二三年级课外阅读书籍</div>
+						<div class="c4 fd">￥29.80</div>
+						<div class="c5 fd"><button value="-">-</button></div>
+						<div class="c6 fd"><input type="text" class="text" value="1"></div>
+						<div class="c7 fd"><button value="+">+</button></div>
+						<div class="c8 fd">￥29.80</div>
+						<div class="c9 fd">删除</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="bottom">
+					<div class="t1 fd"><input type="checkbox" name="qx">全选</div>
+					<div class="b2 fd">删除选中的商品</div>
+					<div class="b3 fd">清空购物车</div>
+					<div class="b4 fd">已经选<span>3</span>件商品</div>
+					<div class="b5 fd">总价：<span>￥67.20</span></div>
+					<div class="b6">去结算</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</body>
+</html>
