@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-3.6.0.js"></script>
+		<style>
+			.main {
+				width: 450px;
+				margin: 0 auto;
+			}
+			h1 {
+				text-indent: 60px;
+			}
+			.con {
+				margin-top: 50px;
+				font-size: 40px;
+				color: #fba11e;
+			}
+			span:not(:nth-child(1)) {
+				color: white;
+				font-weight: bold;
+				padding: 3px 5px;
+				background-color: #fba11e;
+				border-radius: 5px;
+				box-shadow: 0px 2px 3px 1px darkgrey;
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<div class="main">
+			<h1>距离下一个双十一，还有</h1>
+			<div class="con">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		
+		<script>
+			function djs() {
+				var nowtime = new Date();
+				var nowMonth = nowtime.getMonth()
+				var nowyear = nowtime.getFullYear()
+				
+				// 函数 双十一已过 年份++
+				function fun() {
+					if (nowMonth >= 11) {
+						return nowyear++
+					} else {
+						return nowyear
+					}
+				}
+				var aftertime = new Date(fun(),10,11)
+				// 时间差
+				var differ = (aftertime.getTime() - nowtime.getTime())/1000
+				// 天、时、分、秒
+				var day =parseInt(differ/60/60/24)
+				var hour =parseInt(differ/60/60%24)
+				var minute =parseInt(differ/60%60)
+				var second =parseInt(differ%60)
+				// 写入文档
+				$('span').eq(0).text(day+'天')
+				$('span').eq(1).text(hour+'时')
+				$('span').eq(2).text(minute+'分')
+				$('span').eq(3).text(second+'秒')
+			}
+			djs()
+			setInterval('djs()',1000)
+		</script>
+	</body>
+</html>
