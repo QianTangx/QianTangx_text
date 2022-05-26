@@ -1,0 +1,24 @@
+.dlcon {
+	width: 400px;
+	height: 300px;
+	border: 1px solid black;
+	margin: 200px auto;
+	text-align: center;
+}
+h2 {
+	margin: 30px 0 50px 0;
+}
+.dl_a {
+	margin-top: 20px;
+}
+.dl_b button {
+	margin-top: 60px;
+	padding: 8px 100px;
+	border: none;
+	background-color: green;
+	border-radius: 10px;
+	font-weight: bold;
+	color: white;
+	font-size: 20px;
+	outline: none;
+}

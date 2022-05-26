@@ -1,0 +1,36 @@
+.sycon {
+	width: 1200px;
+	margin: 0 auto;
+}
+.sy_a img {
+	margin-top: -3px;
+}
+.sy_b {
+	margin-top: 10px;
+	height: 70px;
+}
+.sy_b input {
+	margin-top: 10px;
+	margin-left: 950px;
+	width: 150px;
+	height: 20px;
+	float: left;
+}
+.sy_b button {
+	margin: 12px 0 0 10px;
+	float: left;
+}
+.sy_c {
+	width: 1250px;
+	height: 800px;
+}
+.sy_c img{
+	width: 380px;
+	height: 220px;
+}
+.sy_c_a {
+	margin-right: 30px;
+	width: 380px;
+	height: 280px;
+	float: left;
+}
