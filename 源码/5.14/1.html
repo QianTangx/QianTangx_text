@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/1.css"/>
+		<script src="js/jquery-3.6.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		姓名：<input type="text" id="name"/>
+		学科：<select>
+				<option value="C">C</option>
+				<option value="js">js</option>
+				<option value="Css">css</option>
+				<option value="jq">jq</option>
+			</select>
+		分数：<input type="number" id="fs"/>
+		<button>提交</button>
+		<br />
+		<div class="con">
+			<div class="k1"><h2>姓名</h2></div>
+			<div class="k1"><h2>学科</h2></div>
+			<div class="k1"><h2>分数</h2></div>
+		</div>
+		<div class="bot">
+			
+		</div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	
+	$('button').click(function(){
+		var name = $('#name').val();
+		var fs = $('#fs').val();
+		var km = $('select').val();
+		
+		var ys = ''
+		
+		if (fs < 60) {
+			ys = 'a1'
+		} else if (fs < 80) {
+			ys = 'a2'
+		} else {
+			ys = 'a3'
+		}
+		
+		document.querySelector('.bot').innerHTML += '<div class="k1 k2 '+ys+'"><h2>'+name+'</h2></div>\
+			<div class="k1 k2 '+ys+'"><h2>'+km+'</h2></div>\
+			<div class="k1 k2 '+ys+'"><h2>'+fs+'</h2></div>'
+		
+	})
+	
+	
+</script>

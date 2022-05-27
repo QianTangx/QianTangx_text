@@ -1,0 +1,104 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+.show {
+	width: 800px;
+	margin: 0 auto;
+}
+.top {
+	color: white;
+	margin: 30px 0 6px 0;
+	padding-bottom: 5px;
+	border-bottom: 2px solid #dbdbdb;
+}
+.top h3, .sus_bot h4 {
+	display: inline-block;
+	border-radius: 10px;
+	padding: 15px 60px;
+	background-color: #008765;
+}
+.top h3:hover,.sus_bot h4:hover {
+	cursor: pointer;
+}
+.suspend {
+	position: absolute;
+	width: 750px;
+	height: 500px;
+	margin: 0 auto;
+	border: 2px solid #dbdbdb;
+	background-color: white;
+	display: none;
+}
+.suspend_1 {
+	display: inline;
+}
+.sus_seek,.sus_two,.sus_cen {
+	margin: 10px 0 0 10px;
+}
+.sus_seek input {
+	width: 650px;
+	height: 30px;
+}
+.sus_two select {
+	width: 200px;
+	height: 30px;
+}
+.sus_cen textarea{
+	width: 650px;
+	height: 320px;
+	border: 2px solid #dbdbdb;
+	outline: none;
+}
+.sus_bot h4{
+	color: white;
+	margin: 15px 0 0 10px;
+}
+.cen {
+	width: 800px;
+	height: 90px;
+	padding: 5px 0;
+	height: 100px;
+	border-bottom: 2px #dbdbdb dashed;
+}
+.cen_one {
+	width: 90px;
+	height: 90px;
+	border-radius: 50px;
+	overflow: hidden;
+	float: left;
+}
+.cen_two {
+	float: left;
+}
+.ct_a {
+	height: 20px;
+	margin: 15px 0 0 10px;
+	font-weight: bold;
+	font-size: 19px;
+}
+.ct_b {
+	width: 600px;
+	margin: 15px 0 0 10px;
+	font-size: 14px;
+	color: #67696b;
+} 
+.ct_b>span {
+	display: inline-block;
+	margin-right: 20px;
+}
+.del {
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #67696b;
+	text-align: center;
+	line-height: 16px;
+}
+.del:hover {
+	color: white;
+	cursor: pointer;
+	background-color: #008765;
+}

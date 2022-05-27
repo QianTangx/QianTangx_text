@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/new_file.css">
+	</head>
+	<body>
+		
+		<div class="show">
+			
+			<div class="top">
+				<h3>我要发帖</h3>
+			</div>
+			
+			<div class="suspend">
+				<div class="del">x</div>
+				<div class="sus_seek">
+					<input type="text" id="name" value="" placeholder="  请输入标题（1-50个字符）">
+				</div>
+				<div class="sus_two">
+					所属板块：
+					<select>
+						<option value="请选择模板">请选择模板</option>
+						<option value="电子书籍">电子书籍</option>
+						<option value="新课来了">新课来了</option>
+						<option value="新手报到">新手报到</option>
+						<option value="职业规划">职业规划</option>
+					</select>
+				</div>
+				<div class="sus_cen">
+					<textarea aria-valuetext=""></textarea>
+				</div>
+				<div class="sus_bot">
+					<h4>发布</h4>
+				</div>
+			</div>
+			
+			<div class="centent"></div>
+			
+		</div>
+		
+	</body>
+</html>
+<script>
+	// 点击 ‘我要发贴’ 显示输入框 
+	document.querySelector('h3').onclick = function() {
+		document.querySelector('.suspend').className = 'suspend suspend_1'
+	}
+	
+	// 点击  ‘x’ 隐藏输入框
+	document.querySelector('.del').onclick = function() {
+		document.querySelector('.suspend').className = 'suspend'
+	}
+	
+	// 点击 ‘发布’ 关闭输入 并获取内容
+	document.querySelector('h4').onclick = function() {
+		
+		// 隐藏输入框
+		document.querySelector('.suspend').className = 'suspend'
+		
+		// 获取输入内容
+		var name = document.querySelector('input').value
+		var book = document.querySelector('select').value
+		var remark = document.querySelector('textarea').value
+		
+		// 获取现在时间
+		var time = new Date()
+		var year = time.getFullYear()
+		var month = time.getMonth() + 1
+		var day = time.getDate()
+		var s = time.getHours()
+		var f = time.getMinutes()
+		
+		// 定义图片
+//		var tp = ''
+//		// switch 获取书籍 匹配对应的图片
+//		switch (book) {
+//			case '电子书籍':
+//				tp = 1
+//				break
+//			case '新课来了':
+//				tp = 2
+//				break
+//			case '新手报到':
+//				tp = 3
+//				break
+//			default:
+//				tp = 4
+//		}
+		var tp = Math.ceil(Math.random()*4)
+		console.log(tp)
+		// 字符串拼接 输出每一次点击所 获取的内容
+		document.querySelector('.centent').innerHTML +=
+				'<div class="cen">\
+					<div class="cen_one">\
+						<img src="img/tou0'+tp+'.jpg" >\
+					</div>\
+					<div class="cen_two">\
+						<div class="ct_a">\
+							'+name+'\
+						</div>\
+						<div class="ct_b">\
+							板块：<span>'+book+'</span>\
+							发表时间：<span>'+year+'-'+month+'-'+day+'-'+s+':'+f+'</span>\
+						</div>\
+					</div>\
+				</div>'
+		
+		// 重置输入内容框			
+		document.querySelector('input').value = ''
+		document.querySelector('select').value = '请选择模板'
+		document.querySelector('textarea').value = ''
+	}
+	
+</script>

@@ -1,0 +1,22 @@
+.k1 {
+	display: inline-block;
+	line-height: 10px;
+}
+.bot {
+	text-align: center;
+	width: 150px;
+}
+.k2 {
+	width: 40px;
+	height: 50px;
+	margin: 5px 0;
+}
+.a1 {
+	background-color: red;
+}
+.a2 {
+	background-color: pink;
+}
+.a3 {
+	background-color: green;
+}
