@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数实践.</title>
+    <style>
+        div,span {
+            display: block;
+            width: 150px;
+            height: 150px;
+            background-color: blue;
+            margin: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <span></span>
+</body>
+</html>
+<script>
+    // 1、 点击 div 2s 后颜色变成【粉色】
+    // 获取元素
+    let ad = document.querySelector('div')
+    let add = document.querySelector('span')
+    // 绑定事件
+    ad.addEventListener('click', function() {
+        // 保存 this 
+        console.log(this)
+        let _this = this
+        setTimeout(function() {
+            console.log(this)
+            _this.style.background = 'pink'
+        },2000)
+    })
+    add.addEventListener('click', function() {
+        setTimeout(()=> {
+            console.log(this)
+            this.style.background = 'pink'
+        },2000)
+    })
+
+    // 2、 从数组中返回偶数的元素
+
+    const SZ = [1, 6, 10, 3, 5, 100, 25]
+    const result = SZ.filter(function(item) {
+        if (item % 2 === 0) {
+            return true
+        } else {
+            return false
+        }
+    })
+    console.log(result)
+
+    // const arr = SZ.filter(item => {
+    //     if (item % 2 === 0) {
+    //         return true
+    //     } else {
+    //         return false
+    //     }
+    // })
+    // const arr = SZ.filter(item => item % 2 === 0 ? true:false)
+    const arr = SZ.filter(item => item % 2 === 0)
+    console.log(arr)
+    
+    // 箭头函数适合与 this 无关的回调。定时器、数组的方法问题
+    // 箭头函数不适合与 this 有关的回调。 事件回调、对象的方法
+
+</script>

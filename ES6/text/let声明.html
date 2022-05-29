@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+</body>
+</html>
+<script>
+
+// 1、变量不能重复声明
+    // let a = 0
+    // let a = 1
+    let a = 1
+    console.log(a)
+// 2、块级作用域
+// 3、不存在变量提升 只能先声明在使用
+    let cc = 1
+    console.log(cc)
+// 4、不影响作用域链
+    {
+        let ww = '作用域链'
+        function fn() {
+            console.log(ww)
+        }
+        fn()
+    }
+
+</script>

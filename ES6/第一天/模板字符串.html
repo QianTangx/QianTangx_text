@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模板字符串</title>
+</head>
+<body>
+    <script>
+        // ES6 引入新的声明字符串的方式  `` '' ""
+        // 1、声明
+        let str = `这是新的声明字符串`
+        console.log(str, typeof str)
+        // 2、内容中可以直接出现换行符
+        let srt1 = `<ul>
+            <li>剑豪</li>
+            <li>剑圣</li>
+            <li>剑姬</li>
+            <li>剑魔</li>
+            </ul>`
+        console.log(srt1)
+        // 3、变量拼接
+        let a = `aaa`
+        let b = `${a}bbb`
+        console.log(b)
+
+    </script>
+</body>
+</html>
