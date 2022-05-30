@@ -3,146 +3,58 @@
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
-		<!--引入css样式-->
-		<link rel="stylesheet" type="text/css" href="css/top.css"/>
-		<link rel="stylesheet" type="text/css" href="css/incenter.css"/>
-		<link rel="stylesheet" type="text/css" href="css/bot.css"/>
 	</head>
 	<body>
-		<!--主体-->
-		<div class="main">
-			<!--导航部分-->
-			<div class="nav">
-				<div class="nav_a">
-					<a href="index.html">XX数码商城</a>
-					<a href="index.html">首页</a>
-					<a href="javascript:;">商品列表</a>
-					<a href="javascript:;">品牌排行</a>
-					<a href="javascript:;">关于我们</a>
-				</div>
-				<!--搜索框-->
-				<div class="nav_b">
-					<img src="img/search.jpg"/>
-				</div>
-				<!--登录跳转部分-->
-				<div class="nav_c">
-					<a href="denglu.html">登录注册</a>
-				</div>
-				
-			</div>
-			<!--轮播图部分-->
-			<div class="lbt">
-				<img src="img/banner1.jpg"/>
-			</div>
-			<!--中间部分-->
-			<div class="incen">
-				<h2>5G手机</h2>
-				<div class="incen_a">
-					 <li>
-					 	<div class="ina_a"><img src="img/sj01.jpg"/></div>
-					 	<div class="ina_b">某某手机</div>
-					 	<div class="ina_c">关于性价比的描述，和一些其他相关信息。</div>
-						<div class="ina_d">
-							<a href="goumai.html">购买</a>
-							<a href="javascript:;">详情</a>
-						</div>
-					 </li>
-					 <li>
-					 	<div class="ina_a"><img src="img/sj02.jpg"/></div>
-					 	<div class="ina_b">某某手机</div>
-					 	<div class="ina_c">关于性价比的描述，和一些其他相关信息。</div>
-						<div class="ina_d">
-							<a href="goumai.html">购买</a>
-							<a href="javascript:;">详情</a>
-						</div>
-					 </li>
-					 <li>
-					 	<div class="ina_a"><img src="img/sj03.jpg"/></div>
-					 	<div class="ina_b">某某手机</div>
-					 	<div class="ina_c">关于性价比的描述，和一些其他相关信息。</div>
-						<div class="ina_d">
-							<a href="goumai.html">购买</a>
-							<a href="javascript:;">详情</a>
-						</div>
-					 </li>
-					 <li>
-					 	<div class="ina_a"><img src="img/sj04.jpg"/></div>
-					 	<div class="ina_b">某某手机</div>
-					 	<div class="ina_c">关于性价比的描述，和一些其他相关信息。</div>
-						<div class="ina_d">
-							<a href="goumai.html">购买</a>
-							<a href="javascript:;">详情</a>
-						</div>
-					 </li>
-					 <li>
-					 	<div class="ina_a"><img src="img/sj05.jpg"/></div>
-					 	<div class="ina_b">某某手机</div>
-					 	<div class="ina_c">关于性价比的描述，和一些其他相关信息。</div>
-						<div class="ina_d">
-							<a href="goumai.html">购买</a>
-							<a href="javascript:;">详情</a>
-						</div>
-					 </li>
-					 <li>
-					 	<div class="ina_a"><img src="img/sj06.jpg"/></div>
-					 	<div class="ina_b">某某手机</div>
-					 	<div class="ina_c">关于性价比的描述，和一些其他相关信息。</div>
-						<div class="ina_d">
-							<a href="goumai.html">购买</a>
-							<a href="javascript:;">详情</a>
-						</div>
-					 </li>
-					 <li>
-					 	<div class="ina_a"><img src="img/sj07.jpg"/></div>
-					 	<div class="ina_b">某某手机</div>
-					 	<div class="ina_c">关于性价比的描述，和一些其他相关信息。</div>
-						<div class="ina_d">
-							<a href="goumai.html">购买</a>
-							<a href="javascript:;">详情</a>
-						</div>
-					 </li>
-					 <li>
-					 	<div class="ina_a"><img src="img/sj08.jpg"/></div>
-					 	<div class="ina_b">某某手机</div>
-					 	<div class="ina_c">关于性价比的描述，和一些其他相关信息。</div>
-						<div class="ina_d">
-							<a href="goumai.html">购买</a>
-							<a href="javascript:;">详情</a>
-						</div>
-					 </li>
-				</div>
-			</div>
-			
-			<!--底部-->
-			<div class="bottom">
-				<div class="bot_a">
-					联系电话13710011001
-				</div>
-				<div class="bot_a">
-					地址：xx省xx市xx路xx号
-				</div>
-				<div class="bot_a">
-					版权所有：@xxxxxxxxxx
-				</div>
-			</div>
-			
-		</div>
-		
+		<!-- 身份证输入 -->
+		<input type="text" name="" id="sfz" placeholder="请输入身份证" value="" /> <span id="ti"></span>
+		<div> 出生年 <input class="cs" readonly="readonly" /> </div>
+		<div> 出生月 <input class="cs" readonly="readonly" /> </div>
+		<div> 出生日 <input class="cs" readonly="readonly" /> </div>
+		<div> 性别 <input id="nan" type="radio" name="sex" value="男" /> 男 <input id="nv" type="radio" name="sex" value="女"/> 女 </div> 
 	</body>
 </html>
+
+<script src="js/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
-	//把图片放入banners中
-	var banners = ["img/banner1.jpg", "img/banner2.jpg", "img/banner3.jpg", "img/banner4.jpg"]
-	var count = 0
-	function fn() {
-		count++
-		if (count == banners.length) {
-			count = 0
+	//ctrl + /
+	// 获取身份证， 失去焦点的时候意味着一定输入完毕
+	$("#sfz").blur(function(){
+		//获取输入的内容
+		var sfz = $("#sfz").val();
+		//身份证 18为，由数字及 x 组成
+		if( !/^[0-9xX]{18}$/.test(sfz) ){
+			//不成立，提升并继续输入
+			$("#ti").html("身份证输入不正确必须输入正确的")
+			$("#sfz").focus();
+			return;
 		}
-		//获取并替换图片路径
-		document.querySelector('.lbt img').src = banners[count]
-	}
-	//每3秒调用一次fn函数
-	setInterval(fn, 3000)
+		//410923200411166619
+		//正确的可以继续执行， 处理 字符串内容，获取到年月日
+		var nian = sfz.substr(6,4);
+		console.log( nian )
+		var yue = sfz.substr(10,2);
+		console.log( yue )
+		var ri = sfz.substr(12,2);
+		console.log( ri )
+		//写入
+		$(".cs").eq(0).val(nian)
+		$(".cs").eq(1).val(yue)
+		$(".cs").eq(2).val(ri)
+		//倒数第二位
+		var xb = sfz.substr(16,1);
+		console.log( xb )
+		if(xb%2==0){
+			$("#nv").prop("checked",true)
+		}else{
+			$("#nan").prop("checked",true)
+		}
+	})
+	
+	
+	
 	
 </script>
+
+
+
+
