@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>参数默认值</title>
+</head>
+<body>
+    <script>
+        // ES6 允许给函数赋值初始值
+        // 1. 形参初始值 具有默认值的参数，一般位置要靠后(潜规则)
+        function add(a, b, c=10) {
+            return a + b + c;
+        }
+        let result = add(1, 2)
+        console.log(result)
+
+        // 2. 与解构赋值结合
+        function connect({qian='qiantangx', host='www.con', username, password, port}) {
+            console.log(qian)
+            console.log(host)
+            console.log(username)
+            console.log(password)
+            console.log(port)
+        }
+        connect({
+            qian: 'tang',
+            // 有内容就输出内容，无内容则输出默认赋值
+            // host: 'bilbil.com',
+            username: 'root',
+            password: 'pass',
+            port: 3300
+        })
+    </script>
+</body>
+</html>
