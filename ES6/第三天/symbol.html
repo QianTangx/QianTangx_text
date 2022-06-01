@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>symbol</title>
+</head>
+<body>
+    <script>
+        // 创建 Symbol
+        let s = Symbol()
+        console.log(s)
+        let s2 = Symbol('QianTangx')
+        console.log(s2)
+        let s3 = Symbol('QianTang')
+        console.log(s2 === s3) // 地址不一样
+        let s4 = Symbol.for('Qian')
+        let s5 = Symbol.for('Qian')
+        console.log(s4, s5)
+        console.log(s4 === s5)
+        
+        // 不能与其他数据进行计算
+        // let jg = s + 100
+        // let jg = s + s
+
+        // 7大数据类型
+        // USONB  you are so niubility
+        // U undefined
+        // S string  symbol
+        // N null number
+        // B bollean
+
+    </script>
+</body>
+</html>

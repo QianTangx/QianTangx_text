@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迭代器</title>
+</head>
+<body>
+    <script>
+        // 声明一个数组
+        // const arr = [1, 2, 3, 4, 5]
+        // // 使用 for...of 遍历数组
+        // for(let a of arr){
+        //     console.log(a)
+        // }
+
+        const banji = {
+            name: 'QianTangx',
+            age:[
+                'Qian',
+                'Tang',
+                'x',
+                4
+            ],
+            [Symbol.iterator](){
+                // 索引变量
+                let index = 0
+                console.log(this)
+                let _this = this
+                return {
+                    next: function(){
+                        if (index < _this.age.length) {
+                            const result = {value: _this.age[index], done: false }
+                            index++
+                            return result
+                        } else {
+                            return {value: undefined, done:true}
+                        }
+                    }
+                }
+            }
+        }
+
+        for(let v of banji){
+            console.log(v)
+        }
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扩展运算符应用</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        // 1. 数组的合并
+        const lol = ['Qian', 'Tangx']
+        const kpl = ['浅', '塘x']
+        const lpl = [...lol, ...kpl]
+        console.log(lpl)
+
+        //数组的克隆(浅拷贝)
+        const wz = [1, 2, 3]
+        const ry = [...wz]
+        console.log(ry)
+
+        // 将伪数组转为真正的数组
+        const div = document.querySelectorAll('div')
+        console.log(div)
+        const divArr = [...div]
+        console.log(divArr)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol 创建对象属性</title>
+</head>
+<body>
+    <script>
+        // 向对象中添加方法 up down
+        let game = {
+            name: 'QianTangx',
+            age: 18,
+            up: 'ss',
+            down: 'xx'
+        }
+
+        // 声明一个对象 
+        let dx = {
+            up: Symbol(),
+            down: Symbol()
+        }
+        game[dx.up] = function() {
+            console.log('我可以改变形状')
+        }
+        game[dx.down] = function() {
+            console.log('我可以快速下降')
+        }
+        console.log(game)
+
+        let kk = {
+            ww: '狼人杀',
+            [Symbol('say')]: function(){
+                console.log('我可以发言')
+            },
+            [Symbol('zibao')]: function(){
+                console.log('我可以自爆')
+            }
+        }
+        console.log(kk)
+    </script>
+</body>
+</html>
