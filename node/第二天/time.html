@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>time</title>
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+            text-align: center;
+            font-size: 30px;
+            line-height: 200px;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+<script>
+
+    setInterval(() => {
+        var time = new Date
+        var s = time.getHours()
+        var s = s > 10 ? s : '0'+ s
+        var f = time.getMinutes()
+        var f = f > 10 ? f : '0'+ f
+        var m = time.getSeconds()
+        var m = m > 10 ? m : '0'+ m
+        var div = document.querySelector('div')
+        div.innerHTML = s + ' : ' + f + ' : ' + m
+    }, 1000);
+</script>
