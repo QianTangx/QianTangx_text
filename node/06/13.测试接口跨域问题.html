@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.js"></script>
+</head>
+<body>
+    <button id="btnGET">GET</button>
+    <button id="btnPOST">POST</button>
+    <button id="btnDELETE">DELETE</button>
+
+
+    <script>
+
+        // 1. 测试 GET 接口
+        $('#btnGET').on('click', ()=>{
+            $.ajax({
+                type: 'GET',
+                url: 'http://127.0.0.1/api/get',
+                data: {name: 'zs',age: 20},
+                success: (res) => {
+                    console.log(res)
+                }
+            })
+        })
+
+        // 2. 测试 POST 接口
+        $('#btnPOST').on('click', ()=>{
+            $.ajax({
+                type: 'POST',
+                url: 'http://127.0.0.1/api/post',
+                data: {bookname: '水浒传',author: '施耐庵'},
+                success: (res) => {
+                    console.log(res)
+                }
+            })
+        })
+
+        // 3. 为删除按钮绑定点击事件处理函数
+        $('#btnDELETE').on('click', ()=>{
+            $.ajax({
+                type: 'DELETE',
+                url: 'http://127.0.0.1/api/delete',
+                success: (res) => {
+                    console.log(res)
+                }
+            })
+        })
+
+    </script>
+
+</body>
+</html> 
