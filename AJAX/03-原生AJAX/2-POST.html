@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX POST</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            border: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <script>
+
+        const div = document.querySelector('div')
+        div.addEventListener('mouseenter', () => {
+            // 1. 创建对象
+            const xhr = new XMLHttpRequest()
+            // 2. 初始化 设置类型与 URL
+            xhr.open('POST', 'http://127.0.0.1:8000/server')
+            // 设置请求头
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+            xhr.setRequestHeader('name', 'QianTangx')
+            // 3. 发送
+            // xhr.send('a=100&b=200&c=300') 请求体可以设置
+            xhr.send('QianTangx')
+            // 4. 事件绑定
+            xhr.onreadystatechange = () => {
+                // 判断
+                if (xhr.readyState === 4) {
+                    if(xhr.status >= 200 && xhr.status < 300) {
+                        // 处理服务端返回的结果
+                        div.innerHTML = xhr.response
+                    }
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
