@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 发送 AJAX 请求</title>
+    <style>
+        div {
+            width: 1000px;
+            margin: 0 auto;
+        }
+        button {
+            color: white;
+            width: 90px;
+            height: 50px;
+            border-radius: 10px;
+            font-size: 20px;
+            border: none;
+        }
+        button:nth-of-type(1) {
+            background-color: blue;
+        }
+        button:nth-of-type(2) {
+            background-color: #d03f2a;
+        }
+        button:nth-of-type(3) {
+            width: 200px;
+            height: 50px;
+            background-color: #51b9de;
+        }
+        h2 {
+            font-size: 30px;
+            border-bottom: solid rgb(206, 204, 202) 2px;
+            padding-bottom: 15px;
+        }
+    </style>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <h2>jQuery 发送 AJAX 请求</h2>
+        <button>GET</button>
+        <button>POST</button>
+        <button>通用型方法ajax</button>
+    </div>
+    <script>
+        $('button').eq(0).click(() => {
+            $.get('http://127.0.0.1:8000/jQuery-server', {a:100, b:200}, (data)=>{
+                console.log(data)
+            }, 'json')
+        })
+
+        $('button').eq(1).click(() => {
+            $.post('http://127.0.0.1:8000/jQuery-server', {a:100, b:200}, (data)=>{
+                console.log(data)
+            })
+        })
+        $('button').eq(2).click(() => {
+            $.ajax({
+                // url
+                url: 'http://127.0.0.1:8000/jQuery-server',
+                // url: 'http://127.0.0.1:8000/delay',
+                // 参数
+                data: {a:100, b:200},
+                // 请求类型
+                type: 'GET',
+                // 响应体结果
+                dataType: 'json',
+                // 成功的回调
+                success: (data) => {
+                    console.log(data)
+                },
+                // 超时时间
+                timeout: 2000,
+                // 成功的回调
+                error: (data) => {
+                    console.log('出错了!!')
+                },
+                // 头信息
+                Headers: {
+                    c: 300,
+                    d: 400
+                }
+            })
+        })
+    </script>
+</body>
+</html>
