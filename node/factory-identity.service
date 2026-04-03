@@ -1,0 +1,14 @@
+[Unit]
+Description=Factory identity initialization before pve-cluster
+DefaultDependencies=yes
+After=local-fs.target systemd-machine-id-commit.service
+Before=ssh.service pve-cluster.service
+ConditionPathExists=!/var/lib/factory-firstboot.pre.done
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/factory-firstboot.sh pre
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target
