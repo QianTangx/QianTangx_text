@@ -1,0 +1,17 @@
+[Unit]
+Description=Factory first boot initialization after pve-cluster
+DefaultDependencies=yes
+Requires=pve-cluster.service
+After=local-fs.target network-online.target pve-cluster.service
+Before=pveproxy.service pvedaemon.service pvestatd.service
+Wants=network-online.target
+ConditionPathExists=/var/lib/factory-firstboot.pre.done
+ConditionPathExists=!/var/lib/factory-firstboot.done
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/factory-firstboot.sh post
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target
